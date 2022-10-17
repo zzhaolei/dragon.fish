@@ -54,7 +54,7 @@ function _dragon_venv --on-event fish_postexec
     set _dragon_venv
     if set --query VIRTUAL_ENV
         set venv (string replace -r '.*/' '' -- $VIRTUAL_ENV)
-        set --global _dragon_venv (set_color yellow)"$venv"(set_color normal)
+        set --global _dragon_venv (set_color brgrey)"$venv"(set_color normal)
     end
 end
 
