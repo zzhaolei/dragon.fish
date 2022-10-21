@@ -54,7 +54,7 @@ function _dragon_venv --on-event fish_postexec
     set _dragon_venv
     if set --query VIRTUAL_ENV
         set venv (string replace -r '.*/' '' -- $VIRTUAL_ENV)
-        set --global _dragon_venv (set_color brgrey)"$venv"(set_color normal)
+        set --global _dragon_venv (set_color 808080)"$venv"(set_color normal)
     end
 end
 
@@ -70,7 +70,7 @@ function _dragon_cmd_duration --on-event fish_postexec
     test $mins -gt 0 && set --local --append tooks $mins"m"
     test $secs -gt 0 && set --local --append tooks $secs"s"
 
-    set --global _dragon_cmd_duration (set_color brgrey)$tooks(set_color normal)
+    set --global _dragon_cmd_duration (set_color 808080)$tooks(set_color normal)
 end
 
 function _dragon_mode --on-event fish_postexec
