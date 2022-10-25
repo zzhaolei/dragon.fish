@@ -24,7 +24,7 @@ function __dragon_vcs --on-event fish_prompt
         set --local dirty_symbol '*'
         if test (command git status --porcelain --show-stash | count) -ne 0
             set dirty (set_color red)\$dirty_symbol
-        else if test (command git rev-list --count --left-right @{upstream}...@ 2>/dev/null | string replace -r '\s+' '+' | math) -ne 0
+        else if test (command git rev-list --count --left-right @{upstream}...@ 2>/dev/null | string replace -r '\s+' '+' | math 2>/dev/null) -ne 0
             set dirty (set_color yellow)\$dirty_symbol
         else if test (command git stash list | count) -ne 0
             set dirty (set_color blue)\$dirty_symbol
