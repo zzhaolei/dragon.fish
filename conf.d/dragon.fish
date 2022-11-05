@@ -13,8 +13,8 @@ function __dragon_vcs --on-event fish_prompt
     set --query _dragon_skip_git_prompt && set _dragon_vcs && return
 
     fish --private --command "
-        set --local prefix (set_color normal)'('
-        set --local suffix (set_color normal)')'
+        set --local prefix (set_color normal)'['
+        set --local suffix (set_color normal)']'
         set --local branch (command git rev-parse --abbrev-ref HEAD 2>/dev/null)
         if test -z \"\$branch\"
             return
